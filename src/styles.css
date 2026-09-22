@@ -1,0 +1,280 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AdornedBy_Ella — luxury design system.
+ * Midnight black, champagne gold, nude beige, warm ivory, rose gold.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-rose: var(--rose);
+  --color-nude: var(--nude);
+  --color-ivory: var(--ivory);
+  --color-ink: var(--ink);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-accent: "Cormorant Garamond", Georgia, serif;
+  --color-sidebar: var(--card);
+  --color-sidebar-foreground: var(--foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--accent);
+  --color-sidebar-accent-foreground: var(--accent-foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+}
+
+:root {
+  --radius: 1rem;
+
+  --ink: oklch(0.18 0 0); /* #111111 */
+  --gold: oklch(0.767 0.128 86.5); /* #D4AF37 */
+  --gold-soft: oklch(0.87 0.075 88);
+  --nude: oklch(0.936 0.023 79); /* #F5EBDD */
+  --ivory: oklch(0.978 0.01 72); /* #FFF9F4 */
+  --rose: oklch(0.63 0.077 15.7); /* #B76E79 */
+
+  --background: var(--ink);
+  --foreground: var(--ivory);
+  --card: oklch(0.235 0.005 60);
+  --card-foreground: var(--ivory);
+  --popover: oklch(0.21 0.004 60);
+  --popover-foreground: var(--ivory);
+  --primary: var(--gold);
+  --primary-foreground: oklch(0.15 0 0);
+  --secondary: oklch(0.28 0.008 70);
+  --secondary-foreground: var(--nude);
+  --muted: oklch(0.27 0.006 70);
+  --muted-foreground: oklch(0.76 0.014 75);
+  --accent: var(--rose);
+  --accent-foreground: oklch(0.98 0.01 72);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.01 72);
+  --border: oklch(0.767 0.128 86.5 / 22%);
+  --input: oklch(0.767 0.128 86.5 / 26%);
+  --ring: var(--gold);
+
+  --gradient-gold: linear-gradient(120deg, oklch(0.62 0.1 82), var(--gold), oklch(0.92 0.06 92));
+  --gradient-noir: linear-gradient(160deg, oklch(0.14 0 0), oklch(0.25 0.012 70));
+  --gradient-nude: linear-gradient(135deg, var(--nude), oklch(0.78 0.055 20));
+  --gradient-ivory: linear-gradient(135deg, var(--ivory), oklch(0.9 0.045 88));
+
+  --shadow-luxe: 0 30px 70px -30px oklch(0 0 0 / 0.75);
+  --shadow-gold: 0 20px 60px -25px oklch(0.767 0.128 86.5 / 0.45);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+}
+
+@utility text-gilded {
+  background-image: var(--gradient-gold);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glass-card {
+  background: color-mix(in oklab, var(--ivory) 6%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--gold) 24%, transparent);
+  box-shadow: var(--shadow-luxe);
+}
+
+@utility glass-light {
+  background: color-mix(in oklab, var(--ink) 5%, transparent);
+  backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+}
+
+@utility luxe-shadow {
+  box-shadow: var(--shadow-luxe);
+}
+
+@utility gold-shadow {
+  box-shadow: var(--shadow-gold);
+}
+
+@utility gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+@utility eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility hover-lift {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-gold);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@utility float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* --- Buttons: shared, high-contrast, consistent --- */
+@utility btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    filter 0.3s ease;
+
+  &:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@utility btn-gold {
+  background-image: var(--gradient-gold);
+  color: var(--primary-foreground);
+  border: 1px solid color-mix(in oklab, var(--gold) 70%, transparent);
+  box-shadow: var(--shadow-gold);
+
+  &:hover {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+  }
+}
+
+@utility btn-outline-gold {
+  background-color: color-mix(in oklab, var(--gold) 8%, transparent);
+  color: var(--gold);
+  border: 1.5px solid color-mix(in oklab, var(--gold) 70%, transparent);
+
+  &:hover {
+    background-image: var(--gradient-gold);
+    color: var(--primary-foreground);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+  }
+}
+
+@utility btn-lg {
+  padding: 1.05rem 2.1rem;
+  font-size: 0.7rem;
+}
+
+@utility btn-md {
+  padding: 0.85rem 1.7rem;
+  font-size: 0.68rem;
+}
+
+@utility btn-sm {
+  padding: 0.7rem 1.35rem;
+  font-size: 0.65rem;
+}

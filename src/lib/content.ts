@@ -6,20 +6,24 @@ import birthday from "@/assets/birthday.jpg";
 import traditional from "@/assets/traditional.jpg";
 import artist from "@/assets/artist.jpg";
 import brushes from "@/assets/brushes.jpg";
+import ella from "@/assets/ella.jpeg";
+import trandition from "@/assets/trandition.png";
+import group from "@/assets/group.jpeg";
 
 export const looks = [
-  { src: bridal, title: "Ethereal Bridal", category: "Bridal" },
+  { src: ella, title: "Ethereal Bridal", category: "Bridal" },
   { src: softglam, title: "Golden Hour Soft Glam", category: "Soft Glam" },
   { src: boldglam, title: "Midnight Bold Glam", category: "Bold Glam" },
   { src: editorial, title: "Gilded Editorial", category: "Editorial" },
   { src: birthday, title: "Celebration Sparkle", category: "Birthday Looks" },
-  { src: traditional, title: "Gele Royalty", category: "Traditional Wedding" },
+  { src: trandition, title: "Gele Royalty", category: "Traditional Wedding" },
   { src: softglam, title: "Nude Radiance", category: "Soft Glam" },
   { src: bridal, title: "Veiled Elegance", category: "Bridal" },
   { src: boldglam, title: "Gold Foil Drama", category: "Bold Glam" },
   { src: traditional, title: "Coral & Gold", category: "Traditional Wedding" },
   { src: birthday, title: "Champagne Nights", category: "Birthday Looks" },
   { src: editorial, title: "Sculpted Lines", category: "Editorial" },
+  { src: group, title: "Group Glam", category: "Group Makeup" },
 ];
 
 export const categories = [
@@ -30,72 +34,73 @@ export const categories = [
   "Editorial",
   "Birthday Looks",
   "Traditional Wedding",
+  "Group Makeup"
 ];
 
 export const services = [
   {
     name: "Bridal Glam",
-    price: "₦80,000",
-    duration: "2 hrs 30 mins",
+    // price: "₦80,000",
+    // duration: "2 hrs 30 mins",
     products: "Charlotte Tilbury, Fenty Beauty, Pat McGrath",
     includes: ["Trial consultation", "Full face bridal glam", "Lashes & gele styling", "Touch-up kit"],
-    image: bridal,
+    image: ella,
   },
   {
     name: "Traditional Wedding",
-    price: "₦70,000",
-    duration: "2 hrs",
+    // price: "₦70,000",
+    // duration: "2 hrs",
     products: "Huda Beauty, Dior Backstage, Zaron",
     includes: ["Rich pigment artistry", "Gele tying", "Lashes included", "On-location option"],
-    image: traditional,
+    image: trandition,
   },
   {
     name: "Birthday Glam",
-    price: "₦35,000",
-    duration: "1 hr 30 mins",
+    // price: "₦35,000",
+    // duration: "1 hr 30 mins",
     products: "Fenty Beauty, NARS, Juvia's Place",
     includes: ["Full face glam", "Premium lashes", "Setting & finishing spray"],
     image: birthday,
   },
   {
     name: "Photoshoot Makeup",
-    price: "₦40,000",
-    duration: "1 hr 45 mins",
+    // price: "₦40,000",
+    // duration: "1 hr 45 mins",
     products: "Pat McGrath, MAC Pro, Dior",
     includes: ["Camera-ready base", "Studio-tested finish", "One look change"],
     image: editorial,
   },
   {
-    name: "Engagement Makeup",
-    price: "₦45,000",
-    duration: "1 hr 45 mins",
+    name: "Studio Glam",
+    // price: "₦45,000",
+    // duration: "1 hr 45 mins",
     products: "Charlotte Tilbury, Anastasia Beverly Hills",
     includes: ["Soft romantic glam", "Lashes", "Long-wear setting"],
     image: softglam,
   },
   {
     name: "Editorial Makeup",
-    price: "₦60,000",
-    duration: "2 hrs",
+    // price: "₦60,000",
+    // duration: "2 hrs",
     products: "Pat McGrath Labs, MAC Pro",
     includes: ["Creative concept design", "Editorial artistry", "On-set touch-ups"],
     image: boldglam,
   },
   {
     name: "Home Service",
-    price: "₦50,000",
-    duration: "Flexible",
+    // price: "₦50,000",
+    // duration: "Flexible",
     products: "Full luxury pro kit",
     includes: ["Artist comes to you", "Full glam", "Lashes", "Within Lagos"],
     image: artist,
   },
   {
     name: "Group Makeup",
-    price: "From ₦30,000 / face",
-    duration: "By arrangement",
+    // price: "From ₦30,000 / face",
+    // duration: "By arrangement",
     products: "Full luxury pro kit",
     includes: ["Bridal train & friends", "Assistant artists", "Coordinated looks"],
-    image: brushes,
+    image: group,
   },
 ];
 

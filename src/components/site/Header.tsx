@@ -4,14 +4,16 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
 
+const logoUrl = new URL("../../assets/logo.PNG", import.meta.url).href;
+
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/portfolio", label: "Portfolio" },
-  { to: "/gallery", label: "Gallery" },
+  // { to: "/gallery", label: "Gallery" },
   { to: "/academy", label: "Academy" },
-  { to: "/testimonials", label: "Testimonials" },
+  // { to: "/testimonials", label: "Testimonials" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -34,13 +36,12 @@ export function Header() {
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5">
-        <Link to="/" className="group flex flex-col leading-none">
-          <span className="font-display text-lg tracking-[0.18em] text-gilded sm:text-xl">
-            ADORNEDBY_ELLA
-          </span>
-          <span className="mt-1 font-body text-[0.55rem] tracking-[0.42em] text-muted-foreground">
-            LUXURY MAKEUP ARTISTRY
-          </span>
+        <Link to="/" className="group flex items-center leading-none">
+          <img
+            src={logoUrl}
+            alt="AdornedBy_Ella luxury makeup artistry"
+            className="h-14 w-14 object-contain"
+          />
         </Link>
 
         <ul className="hidden items-center gap-7 lg:flex">

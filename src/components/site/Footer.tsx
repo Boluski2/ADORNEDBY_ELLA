@@ -2,12 +2,18 @@ import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone, MapPin, Music2, Facebook } from "lucide-react";
 import { site, whatsappLink } from "@/lib/site";
 
+const logoUrl = new URL("../../assets/logo.PNG", import.meta.url).href;
+
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-[var(--gradient-noir)]">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <p className="font-display text-2xl text-gilded">ADORNEDBY_ELLA</p>
+          <img
+            src={logoUrl}
+            alt="AdornedBy_Ella luxury makeup artistry"
+            className="h-32 w-32 object-contain"
+          />
           <p className="mt-3 max-w-sm font-accent text-lg text-muted-foreground">
             Enhancing beauty, creating confidence luxury makeup artistry for every
             unforgettable moment.

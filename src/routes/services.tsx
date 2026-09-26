@@ -1,9 +1,48 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, Clock, Palette } from "lucide-react";
+import { Check, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
-import { services } from "@/lib/content";
 import studio from "@/assets/studio.jpg";
+
+const bridalFlyer = new URL("../assets/bide.PNG", import.meta.url).href;
+
+const bridalPackages = [
+  {
+    name: "Classic",
+    event: "One-day event",
+    price: "₦170,000",
+    includes: [
+      "White wedding makeup",
+      "Traditional makeup",
+      "Reception touch-up",
+      "Gele styling",
+      "Nails",
+    ],
+  },
+  {
+    name: "Prestige",
+    event: "One-day event",
+    price: "₦260,000",
+    includes: [
+      "White wedding makeup",
+      "Traditional makeup",
+      "Hair styling",
+      "Reception touch-up",
+      "Gele styling",
+    ],
+  },
+  {
+    name: "Luxury",
+    event: "Two-day event",
+    price: "₦300,000",
+    includes: [
+      "White wedding makeup",
+      "Traditional makeup",
+      "Touch-ups for both days",
+      "Gele styling",
+    ],
+  },
+];
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -12,7 +51,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Bridal glam from ₦80,000, birthday glam from ₦35,000, photoshoot, editorial, home service and group makeup by AdornedBy_Ella in Lagos.",
+          "Explore AdornedBy_Ella's 2026 bridal makeup packages in Lagos: Classic, Prestige and Luxury, with transparent pricing and inclusions.",
       },
       { property: "og:title", content: "Services & Pricing | AdornedBy_Ella" },
       {
@@ -31,47 +70,57 @@ function Services() {
         eyebrow="Services & Investment"
         title={
           <>
-            Luxury, <span className="text-gilded">Priced Honestly</span>
+            2026 Bridal <span className="text-gilded">Makeup Packages</span>
           </>
         }
-        subtitle="Each service includes a consultation, premium products and hygienic, single-use applicators."
+        subtitle="Three wedding packages for celebrations within Lagos, with makeup and styling for your special days."
         image={studio}
       />
 
       <section className="mx-auto max-w-7xl px-5 pb-24">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <Reveal key={s.name} delay={i * 60}>
-              <article className="glass-card hover-lift flex h-full flex-col rounded-3xl p-8">
-                <h2 className="font-display text-2xl">{s.name}</h2>
-                <p className="mt-3 font-accent text-3xl text-gilded">{s.price}</p>
-                <div className="gold-rule mt-6" />
-                <p className="mt-5 flex items-center gap-2 text-xs tracking-[0.14em] uppercase text-muted-foreground">
-                  <Clock size={13} className="text-primary" /> {s.duration}
-                </p>
-                <p className="mt-3 flex items-start gap-2 text-xs text-muted-foreground">
-                  <Palette size={13} className="mt-0.5 shrink-0 text-primary" /> {s.products}
-                </p>
-                <p className="mt-6 text-[0.65rem] tracking-[0.2em] uppercase text-primary">
-                  What's Included
-                </p>
-                <ul className="mt-3 grow space-y-2">
-                  {s.includes.map((inc) => (
-                    <li key={inc} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <Check size={14} className="mt-0.5 shrink-0 text-primary" />
-                      {inc}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/booking"
-                  className="mt-8 btn-base btn-outline-gold btn-sm w-full"
-                >
-                  Book This
-                </Link>
-              </article>
-            </Reveal>
-          ))}
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+          <Reveal>
+            <figure className="mx-auto max-w-xl overflow-hidden rounded-2xl border border-border bg-card">
+              <img
+                src={bridalFlyer}
+                alt="2026 bridal makeup package flyer showing Classic, Prestige and Luxury options"
+                className="h-auto w-full object-contain"
+              />
+            </figure>
+          </Reveal>
+
+          <div className="grid gap-5">
+            {bridalPackages.map((bridalPackage, index) => (
+              <Reveal key={bridalPackage.name} delay={index * 70}>
+                <article className="glass-card rounded-2xl p-6 sm:p-7">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p className="eyebrow">{bridalPackage.event}</p>
+                      <h2 className="mt-2 font-display text-2xl">{bridalPackage.name}</h2>
+                    </div>
+                    <p className="font-accent text-2xl text-gilded">{bridalPackage.price}</p>
+                  </div>
+                  <div className="gold-rule mt-5" />
+                  <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                    {bridalPackage.includes.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <Check size={14} className="mt-0.5 shrink-0 text-primary" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+                    <p className="flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                      <MapPin size={14} className="text-primary" /> Within Lagos
+                    </p>
+                    <Link to="/booking" className="btn-base btn-outline-gold btn-sm">
+                      Book This Package
+                    </Link>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </>

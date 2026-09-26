@@ -104,13 +104,13 @@ function Home() {
                   src={s.image}
                   alt={s.name}
                   loading="lazy"
-                  className="h-48 w-full object-cover"
+                  className="h-55 w-full object-cover"
                 />
                 <div className="p-7">
                   <Sparkles size={20} className="text-primary" />
                   <h3 className="mt-5 font-display text-xl">{s.name}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.duration}</p>
-                  <p className="mt-5 font-accent text-2xl text-gilded">{s.price}</p>
+                  {/* <p className="mt-2 text-sm text-muted-foreground">{s.duration}</p> */}
+                  {/* <p className="mt-5 font-accent text-2xl text-gilded">{s.price}</p> */}
                 </div>
               </div>
             </Reveal>

@@ -86,7 +86,7 @@
   --input: oklch(0.767 0.128 86.5 / 26%);
   --ring: var(--gold);
 
-  --gradient-gold: linear-gradient(120deg, oklch(0.62 0.1 82), var(--gold), oklch(0.92 0.06 92));
+  --gradient-gold: linear-gradient(135deg, oklch(0.78 0.07 84.5), oklch(0.72 0.065 82.5), oklch(0.88 0.04 89));
   --gradient-noir: linear-gradient(160deg, oklch(0.14 0 0), oklch(0.25 0.012 70));
   --gradient-nude: linear-gradient(135deg, var(--nude), oklch(0.78 0.055 20));
   --gradient-ivory: linear-gradient(135deg, var(--ivory), oklch(0.9 0.045 88));
@@ -109,6 +109,14 @@
     color: var(--color-foreground);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  img,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
   }
 
   h1,
@@ -227,6 +235,7 @@
     background-color 0.3s ease,
     color 0.3s ease,
     filter 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
 
   &:focus-visible {
     outline: 2px solid var(--gold);
@@ -277,4 +286,18 @@
 @utility btn-sm {
   padding: 0.7rem 1.35rem;
   font-size: 0.65rem;
+}
+
+@media (max-width: 640px) {
+  .btn-base {
+    letter-spacing: 0.12em;
+  }
+
+  .btn-lg,
+  .btn-md,
+  .btn-sm {
+    padding-block: 0.9rem;
+    padding-inline: 1.15rem;
+    font-size: 0.62rem;
+  }
 }

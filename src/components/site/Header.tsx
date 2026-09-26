@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
-import logo from "@/assets/logo.png";
 
-// const logoUrl = new URL("../../assets/logo.PNG", import.meta.url).href;
+const logo = new URL("../../assets/logo.png", import.meta.url).href;
 
 const links = [
   { to: "/", label: "Home" },

@@ -4,7 +4,9 @@ import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
 import studio from "@/assets/studio.jpg";
 
-const bridalFlyer = new URL("../assets/bide.PNG", import.meta.url).href;
+// const bridalFlyer = new URL("../assets/bide.PNG", import.meta.url).href;
+
+import bridalFlyer from "@/assets/bide.png";
 
 const bridalPackages = [
   {

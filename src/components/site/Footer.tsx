@@ -1,8 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone, MapPin, Music2, Facebook } from "lucide-react";
 import { site, whatsappLink } from "@/lib/site";
+import logoUrl from "@/assets/logo.png";
 
-const logoUrl = new URL("../../assets/logo.PNG", import.meta.url).href;
+// const logoUrl = new URL("../../assets/logo.PNG", import.meta.url).href;
+
+
 
 export function Footer() {
   return (

@@ -6,7 +6,7 @@ import studio from "@/assets/studio.jpg";
 
 // const bridalFlyer = new URL("../assets/bide.PNG", import.meta.url).href;
 
-import bridalFlyer from "@/assets/bide.png";
+import bide from "@/assets/bide.png";
 
 const bridalPackages = [
   {
@@ -84,7 +84,7 @@ function Services() {
           <Reveal>
             <figure className="mx-auto max-w-xl overflow-hidden rounded-2xl border border-border bg-card">
               <img
-                src={bridalFlyer}
+                src={bide}
                 alt="2026 bridal makeup package flyer showing Classic, Prestige and Luxury options"
                 className="h-auto w-full object-contain"
               />

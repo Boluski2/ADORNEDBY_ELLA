@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone, MapPin, Music2, Facebook } from "lucide-react";
 import { site, whatsappLink } from "@/lib/site";
-import logoUrl from "@/assets/logo.png";
+import logo from "@/assets/logo.png";
 
 // const logoUrl = new URL("../../assets/logo.PNG", import.meta.url).href;
 
@@ -13,7 +13,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <img
-            src={logoUrl}
+            src={logo}
             alt="AdornedBy_Ella luxury makeup artistry"
             className="h-32 w-32 object-contain"
           />

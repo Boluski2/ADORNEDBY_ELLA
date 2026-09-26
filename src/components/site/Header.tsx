@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
-import logoUrl from "@/assets/logo.png";
+import logo from "@/assets/logo.png";
 
 // const logoUrl = new URL("../../assets/logo.PNG", import.meta.url).href;
 
@@ -39,7 +39,7 @@ export function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5">
         <Link to="/" className="group flex items-center leading-none">
           <img
-            src={logoUrl}
+            src={logo}
             alt="AdornedBy_Ella luxury makeup artistry"
             className="h-14 w-14 object-contain"
           />

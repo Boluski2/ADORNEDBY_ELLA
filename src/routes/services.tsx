@@ -3,8 +3,7 @@ import { Check, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
 import studio from "@/assets/studio.jpg";
-
-const bide = new URL("../assets/bide.png", import.meta.url).href;
+import bide from "@/assets/bide.png";
 
 const bridalPackages = [
   {
